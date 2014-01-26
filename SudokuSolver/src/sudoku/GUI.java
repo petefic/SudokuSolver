@@ -608,6 +608,9 @@ public class GUI extends javax.swing.JFrame {
         Puzzle puzzle = new Puzzle();
         solution = puzzle.generate();
         
+        // get unsolved version of puzzle
+        int[][] unsolved = new int[9][9];
+        unsolved = puzzle.unsolve(solution);
         
     }//GEN-LAST:event_btnGenerateActionPerformed
 
@@ -615,6 +618,10 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSolveActionPerformed
 
+    private void fillBoard(int[][] puzzle){
+        
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGenerate;
     private javax.swing.JButton btnSolve;
