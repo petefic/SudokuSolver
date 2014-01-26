@@ -612,6 +612,9 @@ public class GUI extends javax.swing.JFrame {
         int[][] unsolved = new int[9][9];
         unsolved = puzzle.unsolve(solution);
         
+        // fill board with unsolved puzzle
+        fillBoard(unsolved);
+        
     }//GEN-LAST:event_btnGenerateActionPerformed
 
     private void btnSolveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSolveActionPerformed
