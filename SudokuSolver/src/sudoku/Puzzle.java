@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package sudoku;
 
 import java.util.ArrayList;
@@ -62,7 +57,6 @@ public class Puzzle {
                 count++;
             }
         }
-
         return solved;
     }
 
@@ -104,7 +98,7 @@ public class Puzzle {
 
         }
 
-		// if out of numbers, replenish this squares numbers
+        // if out of numbers, replenish this squares numbers
         // go back 1 square
         if (availableNums[row][col].isEmpty() == true) {
 
@@ -165,7 +159,6 @@ public class Puzzle {
                 }
             }
         }
-
         return true;
     }
 
@@ -181,12 +174,10 @@ public class Puzzle {
                 section[i][j] = puzzle[xIndex + i][yIndex + j];
             }
         }
-
         return section;
-
     }
 
-	// searches puzzle for empty squares
+    // searches puzzle for empty squares
     // 0 denotes empty
     private boolean emptyCheck() {
 
@@ -199,5 +190,4 @@ public class Puzzle {
         }
         return false;
     }
-
 }
