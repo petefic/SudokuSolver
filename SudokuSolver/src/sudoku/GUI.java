@@ -618,7 +618,10 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGenerateActionPerformed
 
     private void btnSolveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSolveActionPerformed
-        // TODO add your handling code here:
+        
+        // fill board with solved puzzle
+        fillBoard(solution);
+        
     }//GEN-LAST:event_btnSolveActionPerformed
 
     private void fillBoard(int[][] puzzle){
