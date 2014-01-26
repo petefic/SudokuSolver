@@ -703,14 +703,14 @@ public class GUI extends javax.swing.JFrame {
 
         //clear out previous solution
         Arrays.fill(solution, null);
-        
+
         // generate puzzle solution
         Puzzle puzzle = new Puzzle();
         solution = puzzle.generate();
 
         // fill board with unsolved puzzle
         fillBoard(solution, false);
-        
+
         //enable solve button
         btnSolve.setEnabled(true);
 
@@ -720,7 +720,7 @@ public class GUI extends javax.swing.JFrame {
 
         // fill board with solved puzzle
         fillBoard(solution, true);
-        
+
         //disable solve button
         btnSolve.setEnabled(false);
 

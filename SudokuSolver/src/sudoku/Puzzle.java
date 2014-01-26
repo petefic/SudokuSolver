@@ -29,28 +29,25 @@ public class Puzzle {
                 }
             }
         }
-  
+
         boolean error = true;
-        while (error==true){
-            try{
+        while (error == true) {
+            try {
                 //start solving the board at square (0,0)
-                solve(0,0);
+                solve(0, 0);
                 // there weren't any errors, yay!
                 error = false;
-            }
-            catch(StackOverflowError e){
+            } catch (StackOverflowError e) {
                 //there was some sort of error
                 //clear puzzle and keep trying until it works
                 for (int i = 0; i < 9; i++) {
                     for (int j = 0; j < 9; j++) {
-                        puzzle[i][j]=0;
+                        puzzle[i][j] = 0;
                     }
                 }
             }
         }
-       
-            
-        
+
         return puzzle;
     }
 
