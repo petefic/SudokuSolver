@@ -30,9 +30,28 @@ public class Puzzle {
             }
         }
 
-        // start solving the board at the first square
-        solve(0, 0);
-
+        // start solving the board at the first square       
+        try{
+            solve(0,0);
+        }
+        //there was some sort of error
+        catch(StackOverflowError e){
+            
+            System.out.println("STACKOVERFLOW");
+            //clear puzzle
+            for (int i = 0; i < 9; i++) {
+                for (int j = 0; j < 9; j++) {
+                    puzzle[i][j]=0;
+                }
+            }
+            //refill avalibleNums
+            
+            //restart
+            solve(0,0);
+        }
+       
+            
+        
         return puzzle;
     }
 
