@@ -723,6 +723,18 @@ public class GUI extends javax.swing.JFrame {
 
     private void fillBoard(int[][] puzzle) {
 
+        // fill board with puzzle solution, leave square blank if 0
+        int x = 0;
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
+                if (puzzle[i][j] == 0) {
+                    fields.get(x).setText("");
+                } else {
+                    fields.get(x).setText(String.valueOf(puzzle[i][j]));
+                }
+                x++;
+            }
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
