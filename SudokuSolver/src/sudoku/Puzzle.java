@@ -36,30 +36,6 @@ public class Puzzle {
         return puzzle;
     }
 
-    // remove numbers to make board solvable
-    public int[][] unsolve(int[][] solved) {
-
-        Random gen = new Random();
-        int count, x, y;
-        count = 0;
-
-        // remove 40 spaces
-        while (count < 40) {
-            // generate coords of space to clear
-            x = gen.nextInt(9);
-            y = gen.nextInt(9);
-
-            // confirm generated coords haven't already been cleared
-            if (puzzle[x][y] != 0) {
-                // clear space
-                puzzle[x][y] = 0;
-                // find next space
-                count++;
-            }
-        }
-        return solved;
-    }
-
     private void solve(int row, int col) {
 
         Random gen = new Random();

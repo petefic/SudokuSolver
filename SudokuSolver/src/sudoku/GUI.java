@@ -1,7 +1,9 @@
 package sudoku;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 import javax.swing.JTextField;
 
 public class GUI extends javax.swing.JFrame {
@@ -697,23 +699,22 @@ public class GUI extends javax.swing.JFrame {
 
     private void btnGenerateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerateActionPerformed
 
+        //clear out previous solution
+        Arrays.fill(solution, null);
+        
         // generate puzzle solution
         Puzzle puzzle = new Puzzle();
         solution = puzzle.generate();
 
-        // get unsolved version of puzzle
-        int[][] unsolved = new int[9][9];
-        unsolved = puzzle.unsolve(solution);
-
         // fill board with unsolved puzzle
-        fillBoard(unsolved);
+        fillBoard(solution, false);
 
     }//GEN-LAST:event_btnGenerateActionPerformed
 
     private void btnSolveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSolveActionPerformed
 
         // fill board with solved puzzle
-        fillBoard(solution);
+        fillBoard(solution, true);
 
     }//GEN-LAST:event_btnSolveActionPerformed
 
@@ -721,18 +722,24 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt41ActionPerformed
 
-    private void fillBoard(int[][] puzzle) {
+    private void fillBoard(int[][] puzzle, boolean isSolution) {
 
-        // fill board with puzzle solution, leave square blank if 0
+        // fill board with puzzle solution
         int x = 0;
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
-                if (puzzle[i][j] == 0) {
-                    fields.get(x).setText("");
-                } else {
-                    fields.get(x).setText(String.valueOf(puzzle[i][j]));
-                }
+                fields.get(x).setText(String.valueOf(puzzle[i][j]));
                 x++;
+            }
+        }
+
+        //if not a solution, remove 40 random squares
+        if (isSolution == false) {
+            Random gen = new Random();
+            int rand = 0;
+            for (int i = 0; i < 40; i++) {
+                rand = gen.nextInt(81);
+                fields.get(rand).setText("");
             }
         }
     }
