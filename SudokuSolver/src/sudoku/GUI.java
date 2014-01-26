@@ -603,7 +603,12 @@ public class GUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGenerateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerateActionPerformed
-        // TODO add your handling code here:
+        
+        // generate puzzle solution
+        Puzzle puzzle = new Puzzle();
+        solution = puzzle.generate();
+        
+        
     }//GEN-LAST:event_btnGenerateActionPerformed
 
     private void btnSolveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSolveActionPerformed
@@ -706,4 +711,5 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JPanel pnlSW;
     private javax.swing.JPanel pnlW;
     // End of variables declaration//GEN-END:variables
+    private int[][] solution = new int[9][9];
 }
