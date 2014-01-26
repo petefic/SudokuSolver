@@ -37,7 +37,7 @@ public class Puzzle {
         //there was some sort of error
         catch(StackOverflowError e){
             
-            System.out.println("STACKOVERFLOW");
+            System.out.println("There was an error");
             //clear puzzle
             for (int i = 0; i < 9; i++) {
                 for (int j = 0; j < 9; j++) {

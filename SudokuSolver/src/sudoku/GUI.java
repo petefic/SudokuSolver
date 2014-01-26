@@ -666,6 +666,8 @@ public class GUI extends javax.swing.JFrame {
         pnlButtons.add(btnGenerate);
 
         btnSolve.setText("   Solve   ");
+        btnSolve.setToolTipText("");
+        btnSolve.setEnabled(false);
         btnSolve.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSolveActionPerformed(evt);
@@ -708,6 +710,9 @@ public class GUI extends javax.swing.JFrame {
 
         // fill board with unsolved puzzle
         fillBoard(solution, false);
+        
+        //enable solve button
+        btnSolve.setEnabled(true);
 
     }//GEN-LAST:event_btnGenerateActionPerformed
 
@@ -715,6 +720,9 @@ public class GUI extends javax.swing.JFrame {
 
         // fill board with solved puzzle
         fillBoard(solution, true);
+        
+        //disable solve button
+        btnSolve.setEnabled(false);
 
     }//GEN-LAST:event_btnSolveActionPerformed
 
